@@ -97,3 +97,18 @@ def GCD(A, B):
 
 print(GCD(A, B))
 ```
+
+## 組み合わせ
+
+```py
+import math
+from collections import Counter
+# 要素の個数を数える
+cnt_a = Counter(list_a)
+
+combinations = 0
+
+for item in set(list_a):
+    if cnt_a[item] > 1:
+        combinations += math.comb(cnt_a[item], 2)
+```

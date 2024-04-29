@@ -1,18 +1,22 @@
 import math
 from collections import Counter
 
+# 入力
 N = int(input())
 list_card = list(map(int, input().split()))
-cnt = 0
-
 dict_card_num = Counter(list_card)
 
-for card1 in set(list_card):
-    for card2 in set(list_card):
-        if card1 == card2:
-            cnt += math.comb(dict_card_num[card1], 2)
-        else:
-            if card1 + card2 == 100000:
-                cnt = dict_card_num[card1] * dict_card_num[card2]
+cnt = 0
 
+# 50000円のカードの特別扱い
+if 50000 in dict_card_num:
+    cnt += math.comb(dict_card_num[50000], 2)
+
+# それ以外のカードの組み合わせ
+for card in dict_card_num:
+    if card < 50000:
+        if (100000 - card) in dict_card_num:
+            cnt += dict_card_num[card] * dict_card_num[100000 - card]
+
+# 結果の出力
 print(cnt)

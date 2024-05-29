@@ -9,3 +9,6 @@
 
 # .exeファイルを無視する(windowsのバイナリファイル用)
 *.exe
+
+# .vscodeディレクトリを無視する
+.vscode/

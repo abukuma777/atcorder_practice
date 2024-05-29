@@ -18,6 +18,7 @@
         "regex": "cpp",
         "valarray": "cpp",
         "iostream": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "bitset": "cpp"
     }
 }

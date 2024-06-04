@@ -3,42 +3,19 @@ using namespace std;
 
 int main()
 {
-    int N, S;
+    int N, S, cnt = 0;
     cin >> N >> S;
-    vector<int> A(N);
-    for (int i = 0; i < N; i++)
+    for (int i = 1; i < N + 1; i++)
     {
-        cin >> A[i];
-    }
-
-    bool found = false;
-
-    // 全ての部分集合を試す
-    for (int bit = 0; bit < (1 << N); bit++) // bit は 0 から 7 までの値を取る
-    {
-        int sum = 0;
-        for (int i = 0; i < N; i++) // N=3 なので、i は 0 から 2 までの値を取る
+        for (int j = 1; j < N + 1; j++)
         {
-            if (bit & (1 << i)) // bit の i 番目のビットが 1 ならば
+            if (i + j <= S)
             {
-                sum += A[i]; // sum に A[i] を加える
+                cnt++;
             }
         }
-        if (sum == S) // 合計が S に一致するかをチェック
-        {
-            found = true;
-            break;
-        }
     }
 
-    if (found)
-    {
-        cout << "Yes" << endl;
-    }
-    else
-    {
-        cout << "No" << endl;
-    }
-
+    cout << cnt << endl;
     return 0;
 }

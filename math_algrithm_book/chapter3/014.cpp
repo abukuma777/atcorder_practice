@@ -15,11 +15,14 @@ vector<long long> sieve_of_eratosthenes(long long N)
     is_prime[0] = is_prime[1] = false;
 
     // 2 から limit までの各数について素数判定を行う
+    // i*iで平方根以下の数だけを素数判定するようにしている
+    // N=36ならば，2<=i<=6の範囲でループを回す
     for (long long i = 2; i * i <= N; ++i)
     {
         // i が素数の場合、その倍数を全て素数でないとマークする
         if (is_prime[i])
         {
+            // j=i*iの倍数に対してfalseを追加する．
             for (long long j = i * i; j < limit; j += i)
             {
                 is_prime[j] = false;
@@ -34,6 +37,8 @@ vector<long long> sieve_of_eratosthenes(long long N)
     {
         if (is_prime[i])
         {
+            // primesの末尾に要素を追加
+            // vectorは，内部的にサイズを自動的に拡張するので，要素を追加するたびにメモリの再割り当てをすることがある．
             primes.push_back(i);
         }
     }

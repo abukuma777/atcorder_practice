@@ -21,3 +21,16 @@ c++で実装予定です．
 私は，以下の問題に対して回答した結果REになりました．
 次のチャットで私の回答を共有するので，一緒に検討していただけますか？
 ```
+
+## sample
+
+```c
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    return 0;
+}
+
+```

@@ -17,12 +17,12 @@ int main()
 
     for (int i = 0; i < N; i++)
     {
-        int complement = 100000 - array[i];
+        int complement = 100000 - array[i]; // 補数を計算
         if (count_map.find(complement) != count_map.end())
-        {
-            answer += count_map[complement];
+        {                                    // 補数がハッシュマップに存在するかチェック
+            answer += count_map[complement]; // 補数の出現回数を結果に加える
         }
-        count_map[array[i]]++;
+        count_map[array[i]]++; // 現在の要素の出現回数をハッシュマップに更新
     }
 
     cout << answer << endl;

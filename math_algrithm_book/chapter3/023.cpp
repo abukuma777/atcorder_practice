@@ -23,7 +23,7 @@ int main()
         sum_R += R[i];
     }
 
-    // calc
+    // calcu
     double expected_value_all;
     expected_value_all = (static_cast<double>(sum_B) / N) + (static_cast<double>(sum_R) / N);
 

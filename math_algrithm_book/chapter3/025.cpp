@@ -7,9 +7,15 @@ int main()
     int N;
     cin >> N;
 
-    int B[N], R[N];
+    int A[N], B[N];
 
-    int sum_B = 0, sum_R = 0;
+    double sum_A = 0.00, sum_B = 0.00;
+
+    for (int i = 0; i < N; i++)
+    {
+        cin >> A[i];
+        sum_A += A[i];
+    }
 
     for (int i = 0; i < N; i++)
     {
@@ -17,15 +23,9 @@ int main()
         sum_B += B[i];
     }
 
-    for (int i = 0; i < N; i++)
-    {
-        cin >> R[i];
-        sum_R += R[i];
-    }
-
     // calc
     double expected_value_all;
-    expected_value_all = (static_cast<double>(sum_B) / N) + (static_cast<double>(sum_R) / N);
+    expected_value_all = (sum_A * (1.0 / 3)) + (sum_B * (2.0 / 3));
 
     // output
     // setprecision(6)で少数第６位まで出力するようにする
